@@ -32,8 +32,10 @@ jobs:
       - name: generate-snake-game-from-github-contribution-grid
         id: generate-snake
         uses: ./
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          github_user_name: platane
+          github_user_name: yuxi-ovo
           outputs: |
             dist/github-contribution-grid-snake.svg
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
